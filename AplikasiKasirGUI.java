@@ -21,10 +21,12 @@ public class AplikasiKasirGUI {
         // Create and set up the window.
         JFrame frame = new JFrame("Aplikasi Kasir");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
+        frame.setSize(800, 600);
+        frame.setLayout(new BorderLayout(10, 10));
 
         // Panel for input data
         JPanel inputPanel = new JPanel(new GridLayout(2, 2, 10, 10));
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         frame.add(inputPanel, BorderLayout.NORTH);
 
         // Input Pelanggan
@@ -42,6 +44,7 @@ public class AplikasiKasirGUI {
         // Text Area for Struk
         strukArea = new JTextArea();
         strukArea.setEditable(false);
+        strukArea.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         frame.add(new JScrollPane(strukArea), BorderLayout.CENTER);
 
         // Buttons
@@ -52,7 +55,8 @@ public class AplikasiKasirGUI {
         JButton exitButton = new JButton("Keluar");
 
         // Button panel
-        JPanel buttonPanel = new JPanel();
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 5, 10, 10));
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         buttonPanel.add(startButton);
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);

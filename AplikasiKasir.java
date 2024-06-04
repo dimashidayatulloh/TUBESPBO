@@ -33,7 +33,8 @@ public class AplikasiKasir {
             System.out.println("1. Tambah Produk");
             System.out.println("2. Hapus Produk");
             System.out.println("3. Cetak Struk");
-            System.out.println("4. Keluar");
+            System.out.println("4. Tampilkan Produk");
+            System.out.println("5. Keluar");
             System.out.print("Pilih opsi: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
@@ -75,6 +76,12 @@ public class AplikasiKasir {
                     transaksi.cetakStruk();
                     break;
                 case 4:
+                    System.out.println("Daftar Produk:");
+                    for (Produk produk : daftarProduk) {
+                        System.out.println(produk.getId() + ". " + produk.getNama() + " - Rp " + produk.getHarga());
+                    }
+                    break;
+                case 5:
                     running = false;
                     break;
                 default:
