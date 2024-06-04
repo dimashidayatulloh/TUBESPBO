@@ -6,7 +6,7 @@ import java.util.Map;
 public class Transaksi {
     private Pelanggan pelanggan;
     private Kasir kasir;
-    private Map<Produk, Integer> produks; // Produk dan jumlahnya
+    private Map<Produk, Integer> produks;
     private double totalHarga;
 
     public Transaksi(Pelanggan pelanggan, Kasir kasir) {
@@ -37,14 +37,6 @@ public class Transaksi {
         }
     }
 
-    public Map<Produk, Integer> getProduks() {
-        return produks;
-    }
-
-    public double getTotalHarga() {
-        return totalHarga;
-    }
-
     public void cetakStruk() {
         System.out.println("Struk Pembelian:");
         System.out.println("Pelanggan: " + pelanggan.getNama());
@@ -55,4 +47,14 @@ public class Transaksi {
         }
         System.out.println("Total Harga: Rp " + totalHarga);
     }
+
+    // setter & getter
+    public Map<Produk, Integer> getProduks() {
+        return produks;
+    }
+
+    public double getTotalHarga() {
+        return totalHarga;
+    }
+
 }

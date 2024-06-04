@@ -7,6 +7,7 @@ public class Pelanggan {
         this.nama = nama;
     }
 
+    // setter & getter
     public String getNama() {
         return nama;
     }

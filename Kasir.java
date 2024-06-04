@@ -7,6 +7,7 @@ public class Kasir {
         this.nama = nama;
     }
 
+    // setter & getter
     public String getNama() {
         return nama;
     }

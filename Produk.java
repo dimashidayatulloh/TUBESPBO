@@ -11,6 +11,7 @@ public class Produk {
         this.harga = harga;
     }
 
+    // setter & getter
     public int getId() {
         return id;
     }
