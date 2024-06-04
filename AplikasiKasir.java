@@ -24,7 +24,7 @@ public class AplikasiKasir {
         String namaKasir = scanner.nextLine();
         Kasir kasir = new Kasir(namaKasir);
 
-        // Buat Transaksi baru
+        // Buat Transaksi
         Transaksi transaksi = new Transaksi(pelanggan, kasir);
 
         boolean running = true;
@@ -67,21 +67,8 @@ public class AplikasiKasir {
                     int idProdukHapus = scanner.nextInt();
                     scanner.nextLine();
 
-                    // Cari produk berdasarkan id
-                    Produk produkDihapus = null;
-                    for (Produk produk : daftarProduk) {
-                        if (produk.getId() == idProdukHapus) {
-                            produkDihapus = produk;
-                            break;
-                        }
-                    }
-
-                    if (produkDihapus != null && transaksi.getProduks().containsKey(produkDihapus)) {
-                        transaksi.hapusProduk(produkDihapus);
-                        System.out.println("Produk berhasil dihapus.");
-                    } else {
-                        System.out.println("Produk dengan id " + idProdukHapus + " tidak ditemukan dalam transaksi.");
-                    }
+                    transaksi.hapusProduk(idProdukHapus);
+                    System.out.println("Produk berhasil dihapus.");
                     break;
                 case 3:
                     transaksi.hitungTotal();
