@@ -55,4 +55,12 @@ public class Transaksi {
     public double getTotalHarga() {
         return totalHarga;
     }
+
+    public Pelanggan getPelanggan() {
+        return pelanggan;
+    }
+
+    public Kasir getKasir() {
+        return kasir;
+    }
 }
