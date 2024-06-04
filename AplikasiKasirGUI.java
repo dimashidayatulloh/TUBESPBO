@@ -41,7 +41,7 @@ public class AplikasiKasirGUI {
         inputPanel.add(kasirLabel);
         inputPanel.add(kasirField);
 
-        // Text Area for Struk
+        // Text Area
         strukArea = new JTextArea();
         strukArea.setEditable(false);
         strukArea.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -52,16 +52,16 @@ public class AplikasiKasirGUI {
         JButton addButton = new JButton("Tambah Produk");
         JButton removeButton = new JButton("Hapus Produk");
         JButton printButton = new JButton("Cetak Struk");
-        JButton exitButton = new JButton("Keluar");
+        JButton showProductsButton = new JButton("Tampilkan Produk");
 
         // Button panel
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 5, 10, 10));
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 6, 10, 10));
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         buttonPanel.add(startButton);
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
         buttonPanel.add(printButton);
-        buttonPanel.add(exitButton);
+        buttonPanel.add(showProductsButton);
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
         // Event listeners
@@ -136,7 +136,7 @@ public class AplikasiKasirGUI {
                     return;
                 }
                 transaksi.hitungTotal();
-                strukArea.setText("");  // Clear the area
+                strukArea.setText("");
                 strukArea.append("Struk Pembelian:\n");
                 strukArea.append("Pelanggan: " + transaksi.getPelanggan().getNama() + "\n");
                 strukArea.append("Kasir: " + transaksi.getKasir().getNama() + "\n");
@@ -148,13 +148,17 @@ public class AplikasiKasirGUI {
             }
         });
 
-        exitButton.addActionListener(new ActionListener() {
+        showProductsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                StringBuilder productList = new StringBuilder("Daftar Produk:\n");
+                for (Produk produk : daftarProduk) {
+                    productList.append(produk.getId()).append(". ").append(produk.getNama()).append(" - Rp ").append(produk.getHarga()).append("\n");
+                }
+                JOptionPane.showMessageDialog(frame, productList.toString());
             }
         });
 
-        // Display the window.
+        // Display UI Grafis
         frame.setVisible(true);
     }
 }

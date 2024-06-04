@@ -48,6 +48,7 @@ public class Transaksi {
         System.out.println("Total Harga: Rp " + totalHarga);
     }
 
+    // setter & getter
     public List<ItemTransaksi> getItems() {
         return items;
     }

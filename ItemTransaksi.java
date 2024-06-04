@@ -9,6 +9,7 @@ public class ItemTransaksi {
         this.jumlah = jumlah;
     }
 
+    // setter & getter
     public Produk getProduk() {
         return produk;
     }
